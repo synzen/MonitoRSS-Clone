@@ -4,6 +4,8 @@
   "description": "Repository of Discord.RSS meant for cloning",
   "main": "server.js",
   "scripts": {
+    "postinstall": "npm update",
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
