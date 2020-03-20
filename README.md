@@ -25,7 +25,9 @@ For instructions on how to get the web interface working, see https://github.com
 
 You can deploy the bot in a simple way to Heroku using the button below. [Click here for detailed instructions](https://github.com/synzen/Discord.RSS/issues/45).
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+<!-- [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy) -->
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?button-url=https://github.com/synzen/Discord.RSS-Clone&template=https://github.com/synzen/Discord.RSS-Clone/tree/dev)
 
 *If you want to deploy manually you can [follow this guide](https://github.com/synzen/Discord.RSS/issues/95).*
 
