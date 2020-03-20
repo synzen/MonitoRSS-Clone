@@ -106,3 +106,4 @@ dist
 # Discord.RSS specific
 settings/config.json
 settings/schedules.json
+settings/api.js
