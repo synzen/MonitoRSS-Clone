@@ -18,7 +18,7 @@ v6(config)
       console.log(JSON.stringify(item.data, null, 2))
     }
     fs.writeFileSync(`./migrations/failures.log`, JSON.stringify(failures, null, 2))
-    console.error('\n\n\x1b[31mThere were some migration failures. See output above, or failures.log in the migrations directory. ')
+    console.error('\n\n\x1b[31mThere were some migration failures. See output above, or failures.log in the migrations directory.\x1b[0m\n')
   })
   .catch(err => {
     console.error(err)
