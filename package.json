@@ -4,6 +4,7 @@
   "description": "Repository of Discord.RSS meant for cloning",
   "main": "server.js",
   "scripts": {
+    "migrate-v6": "node migrations/v6.js",
     "postinstall": "npm update",
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
