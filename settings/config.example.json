@@ -50,21 +50,5 @@
     "shards": 2,
     "batchSize": 400,
     "parallelBatches": 1
-  },
-  "web": {
-    "enabled": false,
-    "trustProxy": false,
-    "sessionSecret": "keyboard cat",
-    "port": 8081,
-    "redirectURI": "",
-    "clientID": "",
-    "clientSecret": "",
-    "https": {
-      "enabled": false,
-      "privateKey": "",
-      "certificate": "",
-      "chain": "",
-      "port": 443
-    }
   }
 }
