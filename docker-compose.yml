@@ -1,7 +1,7 @@
 version: "3.5"
 services:
   drss-mongo:
-    container_name: drss-mongodb
+    container_name: drss-mongodb-container
     restart: on-failure:5
     command: mongod --port 27017
     # Uncomment below to hide mongo logs
