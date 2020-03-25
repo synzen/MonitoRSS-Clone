@@ -104,6 +104,6 @@ dist
 .tern-port
 
 # Discord.RSS specific
-settings/config.json
-settings/schedules.json
-settings/api.js
+settings/*
+!settings/schedules.example.json
+!settings/config.example.json
