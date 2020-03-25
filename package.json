@@ -7,7 +7,7 @@
   "main": "server.js",
   "scripts": {
     "migrate-v6": "node migrations/v6.js",
-    "postinstall": "npm update",
+    "postinstall": "npm update --no-save",
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
