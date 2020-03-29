@@ -8,7 +8,7 @@
   "scripts": {
     "migrate-v6": "node migrations/v6.js",
     "postinstall": "npm update discord.rss --no-save",
-    "pull-dev": "git pull origin dev && npm run postinstall",
+    "pull-dev": "npm run postinstall",
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
