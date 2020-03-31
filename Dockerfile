@@ -22,6 +22,6 @@ COPY --from=build /usr/src .
 COPY --chown=node:node . .
 USER node
 ENV DRSS_BOT_TOKEN='drss_docker_token' \
-	DRSS_DATABASE_URI='mongodb://mongo:27017/rss' \
+    DRSS_DATABASE_URI='mongodb://mongo:27017/rss' \
     DRSS_WEB_PORT=8080
 CMD ["node", "server.js"]
