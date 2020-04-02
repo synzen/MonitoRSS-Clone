@@ -28,6 +28,6 @@
   },
   "homepage": "https://github.com/synzen/Discord.RSS-Clone#readme",
   "engines": {
-    "node": "12.16"
+    "node": ">=12.16 <13"
   }
 }
