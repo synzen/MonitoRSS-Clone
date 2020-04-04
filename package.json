@@ -4,16 +4,17 @@
   "version": "1.0.0",
   "description": "Repository of Discord.RSS meant for cloning",
   "license": "MIT",
-  "main": "server.js",
+  "main": "bot.js",
   "scripts": {
     "migrate-v6": "node migrations/v6.js",
-    "postinstall": "npm update discord.rss --no-save",
+    "postinstall": "npm update discord.rss --no-save && npm update discord.rss-web --no-save",
     "pull-dev": "npm run postinstall",
-    "start": "node server.js",
+    "start": "node bot.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "discord.rss": "github:synzen/discord.rss#dev",
+    "discord.rss-web": "github:synzen/discord.rss-web#dev",
     "request": "^2.88.2"
   },
   "devDependencies": {

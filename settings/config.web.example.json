@@ -1,0 +1,24 @@
+{
+  "bot": {
+    "token": "",
+    "redirectURI": "http://localhost:8081/authorize",
+    "clientID": "",
+    "clientSecret": ""
+  },
+  "database": {
+    "uri": "mongodb://localhost:27017/rss",
+    "redis": "redis://localhost"
+  },
+  "http": {
+    "trustProxy": false,
+    "sessionSecret": "keyboard cat",
+    "port": 8081
+  },
+  "https": {
+    "enabled": false,
+    "privateKey": "",
+    "certificate": "",
+    "chain": "",
+    "port": 443
+  }
+}
