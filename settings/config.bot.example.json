@@ -1,6 +1,7 @@
 {
   "log": {
-    "pretty": true,
+    "level": "info",
+    "location": "",
     "linkErrs": true,
     "unfiltered": true,
     "failedFeeds": true
