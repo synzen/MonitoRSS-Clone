@@ -4,12 +4,12 @@
   "version": "1.0.0",
   "description": "Repository of Discord.RSS meant for cloning",
   "license": "MIT",
-  "main": "bot.js",
+  "main": "server.js",
   "scripts": {
     "migrate-v6": "node migrations/v6.js",
     "postinstall": "npm update discord.rss --no-save && npm update discord.rss-web --no-save",
     "pull-dev": "npm run postinstall",
-    "start": "node bot.js",
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {

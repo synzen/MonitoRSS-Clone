@@ -17,39 +17,43 @@
 		}
 	],
 	"env": {
+		"DRSS_START": {
+			"description": "Determine what parts of Discord.RSS to start. Input bot to only start the bot, web to start only the web, or bot-web to start both.",
+			"value": "bot"
+		},
 		"DRSS_BOT_TOKEN": {
-			"description": "Discord BOT token. Get it here: https://discordapp.com/developers/applications/."
+			"description": "Discord Bot token. Get it here: https://discordapp.com/developers/applications/."
 		},
 		"DRSS_BOT_PREFIX": {
-			"description": "The prefix of your RSS feed bot. E.g. summoning the bot is done via ~rsshelp.",
-			"value": "~"
+			"description": "Prefix for Discord commands.",
+			"value": "rss."
 		},
 		"DRSS_BOT_OWNERIDS": {
 			"description": "Owner ID(s), separate multiple with a comma.",
 			"required": false
 		},
 		"DRSS_FEEDS_REFRESHRATEMINUTES": {
-			"description": "Refresh rate of your RSS feed bot.",
+			"description": "Refresh rate of RSS feeds",
 			"value": "0.5"
 		},
-		"DRSS_FEEDS_DEFAULTMESSAGE": {
-			"description": "Default message. You can do role pings with <@DISCORD_ROLE_ID>.",
-			"value": ":newspaper:  |  **{title}**\n\n{link}\n\n{subscriptions}"
-		},
-		"DRSS_BOT_STATUS": {
-			"description": "Choose from online, idle, dnd or invisible.",
-			"value": "online"
-		},
-		"DRSS_BOT_ACTIVITYTYPE": {
-			"description": "Choose from PLAYING, LISTENING, STREAMING or WATCHING. Leave this blank if you don't want the bot to display a custom status.",
+		"DRSSWEB_ADMINIDS": {
+			"description": "Only relevant if DRSS_STARTWEB is web or bot-web. Web admin ID(s), separate multiple with commas.",
 			"required": false
 		},
-		"DRSS_BOT_ACTIVITYNAME": {
-			"description": "Displayed next to the activity type. Leave this blank if you don't want the bot to display a custom status.",
+		"DRSSWEB_BOT_TOKEN": {
+			"description": "REQUIRED IF DRSS_STARTWEB IS web OR bot-web. Use the same token as DRSS_BOT_TOKEN.",
 			"required": false
 		},
-		"DRSS_BOT_STREAMURL": {
-			"description": "Stream URL for STREAMING activity. If you're not using the STREAMING activity type leave this blank.",
+		"DRSSWEB_BOT_REDIRECTURI": {
+			"description": "REQUIRED IF DRSS_STARTWEB IS web OR bot-web. Insert the domain name appending /authorize. Example on heroku: https://APPNAME.herokuapp.com/authorize. Make sure the exact url is also set set under the application OAuth2 tab under redirects.",
+			"required": false
+		},
+		"DRSSWEB_BOT_CLIENTID": {
+			"description": "REQUIRED IF DRSS_STARTWEB IS web OR bot-web. App ID that can be found on the general information page at https://discordapp.com/developers/applications/. This should only contain numbers.",
+			"required": false
+		},
+		"DRSSWEB_BOT_CLIENTSECRET": {
+			"description": "REQUIRED IF DRSS_STARTWEB IS web OR bot-web. Found on your app page at Discord Developers at https://discordapp.com/developers/applications/",
 			"required": false
 		}
 	},
