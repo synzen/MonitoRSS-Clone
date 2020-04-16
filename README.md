@@ -1,9 +1,8 @@
 # Discord.RSS Clone
 
-**This repository is only for users who will clone Discord.RSS files directly. The main repository is located at https://github.com/synzen/Discord.RSS.**
+**This repository is only for users who will clone Discord.RSS files directly.**
 
-**For the web UI, see https://github.com/synzen/Discord.RSS-Web** 
-
+The main repository is located at https://github.com/synzen/Discord.RSS, and the web repository at https://github.com/synzen/Discord.RSS-Web.
 
 ***
 
