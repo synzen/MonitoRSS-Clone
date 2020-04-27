@@ -19,7 +19,7 @@ https://discordapp.com/oauth2/authorize?client_id=268478587651358721&scope=bot&p
 
 ### Web Interface
 
-Discord.RSS also comes with a web interface! To run the web interface, see https://github.com/synzen/Discord.RSS-Web
+Discord.RSS also comes with a web interface! To run the web interface, see the documentation.
 
 ![UI Screenshot](https://i.imgur.com/CD8mbRh.png)
 
