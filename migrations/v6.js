@@ -1,6 +1,6 @@
 const fs = require('fs')
 const DiscordRSS = require('discord.rss')
-const config = require('../settings/config.json')
+const config = require('../settings/config.bot.json')
 
 // This will potentially throw
 DiscordRSS.validateConfig(config)
