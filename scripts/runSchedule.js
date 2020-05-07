@@ -5,9 +5,10 @@ const config = fs.existsSync(configPath) ? JSON.parse(fs.readFileSync(configPath
 
 const runSchedule = require('discord.rss').scripts.runSchedule
 
-runSchedule(config)
-  .then((scheduleRun) => {
-    console.log(scheduleRun.failedURLs)
-  })
-  .catch(console.error)
+runSchedule(config, (err, scheduleRun) => {
+  if (err) {
+    throw err
+  }
+  console.log(scheduleRun.failedURLs)
+})
 
