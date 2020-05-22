@@ -21,7 +21,7 @@ services:
     container_name: drss-bot-container
     restart: on-failure:3
     # The image can also be used
-    # image: synzen/discord.rss-clone
+    # image: synzen/discord.rss
     build: .
     environment:
       - DRSS_START=bot
@@ -30,7 +30,7 @@ services:
   drss-web:
     container_name: drss-web-container
     # The image can also be used
-    # image: synzen/discord.rss-clone
+    # image: synzen/discord.rss
     build: .
     restart: on-failure:3
     ports:
