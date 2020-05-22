@@ -2,6 +2,7 @@ version: "3.5"
 services:
   drss-redis:
     container_name: drss-redis-container
+    restart: on-failure:5
     image: redis:alpine
     # Comment below to show redis logs
     # logging:
@@ -10,7 +11,7 @@ services:
     container_name: drss-mongodb-container
     restart: on-failure:5
     command: mongod --port 27017
-    # Comment below to hide mongo logs
+    # Comment below to show mongo logs
     # logging:
     #   driver: none
     image: mongo:latest
@@ -18,7 +19,9 @@ services:
       - 'db-data:/data/db'
   drss-bot:
     container_name: drss-bot-container
-    restart: on-failure:10
+    restart: on-failure:3
+    # The image can also be used
+    # image: synzen/discord.rss-clone
     build: .
     environment:
       - DRSS_START=bot
@@ -26,8 +29,10 @@ services:
       - DRSS_DATABASE_URI=mongodb://drss-mongo:27017/rss
   drss-web:
     container_name: drss-web-container
-    restart: on-failure:10
+    # The image can also be used
+    # image: synzen/discord.rss-clone
     build: .
+    restart: on-failure:3
     ports:
       - "8081:8081"
     environment:
