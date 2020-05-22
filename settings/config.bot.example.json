@@ -1,7 +1,7 @@
 {
   "log": {
     "level": "info",
-    "location": "",
+    "destination": "",
     "linkErrs": true,
     "unfiltered": true,
     "failedFeeds": true
@@ -18,8 +18,7 @@
     "ownerIDs": [],
     "menuColor": 5285609,
     "deleteMenus": true,
-    "exitOnSocketIssues": true,
-    "commandAliases": {}
+    "exitOnSocketIssues": true
   },
   "database": {
     "uri": "mongodb://localhost:27017/rss",
@@ -50,6 +49,8 @@
   "advanced": {
     "shards": 2,
     "batchSize": 400,
-    "parallelBatches": 1
-  }
+    "parallelBatches": 1,
+    "parallelRuns": 1
+  },
+  "webURL": ""
 }
