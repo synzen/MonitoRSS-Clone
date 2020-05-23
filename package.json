@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "discord.rss": "^6.0.2",
-    "discord.rss-web": "0.0.5",
+    "discord.rss-web": "0.0.6",
     "request": "^2.88.2"
   },
   "devDependencies": {
