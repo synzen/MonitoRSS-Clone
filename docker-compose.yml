@@ -23,6 +23,8 @@ services:
     # The image can also be used
     # image: synzen/discord.rss
     build: .
+    depends_on:
+      - drss-mongo
     environment:
       - DRSS_START=bot
       - DRSS_BOT_TOKEN=
@@ -33,6 +35,9 @@ services:
     # image: synzen/discord.rss
     build: .
     restart: on-failure:3
+    depends_on:
+      - drss-redis
+      - drss-mongo
     ports:
       - "8081:8081"
     environment:
