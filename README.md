@@ -53,6 +53,4 @@ Include the following in a new line below `"scripts": {`:
 
 If you want the web UI, you will need to add the following in a file named .env:
 
-```
-DRSS_START=bot-web
-```
+![image](https://user-images.githubusercontent.com/44692189/82736173-5b68f500-9d49-11ea-9e42-9b23af184438.png)
