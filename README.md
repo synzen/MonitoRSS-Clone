@@ -43,15 +43,10 @@ You can use [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) for the MongoDB
 
 The web port for Glitch is 3000.
 
-You will also need to modify the scripts section of the package.json in order for the bot to work properly on Glitch.
+Discord.RSS requires node.js v12.16. As of 23 May 2020, Glitch currently does not install v12.16 automatically, and must be manually installed. For Discord.RSS to work on Glitch, you will need to modify the scripts section to manually install v12.16.
 
-Replace the lines starting from `"scripts": {` and ending in `},` with:
+Include the following in a new line below `"scripts": {`:
 
 ```
-  "scripts": {
-    "preinstall": "npm install --save node@12.16.3",
-    "migrate-v6": "node migrations/v6.js",
-    "start": "node bot-web.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+"preinstall": "npm install --save node@12.16.3",
 ```
