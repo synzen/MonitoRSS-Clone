@@ -51,4 +51,8 @@ Include the following in a new line below `"scripts": {`:
 "preinstall": "npm install --save node@12.16.3",
 ```
 
-If you want the web UI, you will need to replace `server.js` in the start script with `bot-web.js`.
+If you want the web UI, you will need to add the following in a file named .env:
+
+```
+DRSS_START=bot-web
+```
