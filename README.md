@@ -42,3 +42,16 @@ Click the button below to import the code to Glitch. Wait for the importing proc
 You can use [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) for the MongoDB database and [Redis Labs](https://redislabs.com/) for the Redis database.
 
 The web port for Glitch is 3000.
+
+You will also need to modify the scripts section of the package.json in order for the bot to work properly on Glitch.
+
+Replace the lines starting from `"scripts": {` and ending in `},` with:
+
+```
+  "scripts": {
+    "preinstall": "npm install --save node@12.16.3",
+    "migrate-v6": "node migrations/v6.js",
+    "start": "node bot-web.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+```
