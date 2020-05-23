@@ -1,7 +1,7 @@
 {
   "name": "discord.rss-clone",
   "author": "synzen",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Repository of Discord.RSS meant for cloning",
   "license": "MIT",
   "main": "server.js",
