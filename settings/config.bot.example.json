@@ -18,6 +18,7 @@
     "ownerIDs": [],
     "menuColor": 5285609,
     "deleteMenus": true,
+    "runSchedulesOnStart": true,
     "exitOnSocketIssues": true
   },
   "database": {
