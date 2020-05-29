@@ -41,7 +41,7 @@ Click the button below to import the code to Glitch. Wait for the importing proc
 
 You can use [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) for the MongoDB database and [Redis Labs](https://redislabs.com/) for the Redis database.
 
-Discord.RSS requires node.js v12.16. As of 23 May 2020, Glitch currently does not install v12.16 automatically, and must be manually installed. For Discord.RSS to work on Glitch, you will need to modify the scripts section to manually install v12.16.
+Discord.RSS requires node.js v12.16. As of 23 May 2020, Glitch currently does not install v12.16 automatically, and must be manually installed. For Discord.RSS to work on Glitch, you will need to modify the scripts section in the package.json file to manually install v12.16.
 
 Include the following in a new line below `"scripts": {`:
 
