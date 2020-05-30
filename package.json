@@ -1,7 +1,7 @@
 {
   "name": "discord.rss-clone",
   "author": "synzen",
-  "version": "1.0.6",
+  "version": "1.0.9",
   "description": "Repository of Discord.RSS meant for cloning",
   "license": "MIT",
   "main": "server.js",
@@ -11,8 +11,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "discord.rss": "^6.0.3",
-    "discord.rss-web": "0.0.13",
+    "discord.rss": "^6.2.0",
+    "discord.rss-web": "0.0.22",
     "request": "^2.88.2"
   },
   "devDependencies": {
@@ -27,6 +27,6 @@
   },
   "homepage": "https://github.com/synzen/Discord.RSS-Clone#readme",
   "engines": {
-    "node": ">=12.16 <13"
+    "node": ">=12.16"
   }
 }

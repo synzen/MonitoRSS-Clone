@@ -35,22 +35,34 @@ You can deploy the bot in a simple way to Heroku using the button below. [Click 
 
 ### Hosting on Glitch
 
-Click the button below to import the code to Glitch. Wait for the importing process to complete, make your project private and fill in the [Configuration](https://docs.discordrss.xyz/configuration/bot-configuration). Use a tool like [Uptime Robot](https://uptimerobot.com/) to prevent the bot from going offline.
+Discord.RSS requires node.js v12.16. As of 23 May 2020, Glitch does not install v12.16 automatically, and must be manually installed. For Discord.RSS to work on Glitch, follow these steps.
+
+#### Setup
+
+1. Click the remix button and wait for the setup to complete. Be sure to make your project private to protect your configs.
 
 [![Remix on Glitch](https://cdn.glitch.com/2703baf2-b643-4da7-ab91-7ee2a2d00b5b%2Fremix-button.svg)](https://glitch.com/edit/#!/import/github/synzen/Discord.RSS-Clone)
 
-You can use [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) for the MongoDB database and [Redis Labs](https://redislabs.com/) for the Redis database.
-
-Discord.RSS requires node.js v12.16. As of 23 May 2020, Glitch currently does not install v12.16 automatically, and must be manually installed. For Discord.RSS to work on Glitch, you will need to modify the scripts section to manually install v12.16.
-
-Include the following in a new line below `"scripts": {`:
-
+2. Open terminal and run the following command. Adding the git remote will let you pull updates from the clone repo.
 ```
-"preinstall": "npm install --save node@12.16.3",
+git remote add origin https://github.com/synzen/Discord.RSS-Clone.git && npm install --no-save node@12.16.3
 ```
 
-If you want the web UI, you will need to follow the [web configuration](https://docs.discordrss.xyz/configuration/web-interface) and add the following in a file named .env:
+3. Set up your [configs](https://docs.discordrss.xyz/configuration/bot-configuration). You can use [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) for the MongoDB database and [Redis Labs](https://redislabs.com/) for the Redis database.
+4. Use a tool like [Uptime Robot](https://uptimerobot.com/) to prevent the bot from going offline.
+
+If you want the web interface, you will need to follow the [web configuration](https://docs.discordrss.xyz/configuration/web-interface) and add the following in a file named .env:
 
 ![image](https://user-images.githubusercontent.com/44692189/82736173-5b68f500-9d49-11ea-9e42-9b23af184438.png)
 
 The web port for Glitch is 3000.
+
+#### Updating
+
+See https://docs.discordrss.xyz/setting-up/staying-updated. Since using `npm install` will remove the required node v12.16 automatically, you must install it again after updating:
+
+```
+git pull && npm install && npm install --no-save node@12.16.3
+```
+
+
