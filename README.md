@@ -62,7 +62,7 @@ The web port for Glitch is 3000.
 See https://docs.discordrss.xyz/setting-up/staying-updated. Since using `npm install` will remove the required node v12.16 automatically, you must install it again after updating:
 
 ```
-git pull && npm install && npm install --no-save node@12.16.3
+git reset --hard origin/master && npm install && npm install --no-save node@12.16.3
 ```
 
 
