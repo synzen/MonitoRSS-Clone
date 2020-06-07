@@ -11,8 +11,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "discord.rss": "^6.3.7",
-    "discord.rss-web": "0.0.22",
+    "discord.rss": "^6.3.8",
+    "discord.rss-web": "0.0.23",
     "request": "^2.88.2"
   },
   "devDependencies": {
