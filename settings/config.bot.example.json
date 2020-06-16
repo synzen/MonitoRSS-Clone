@@ -25,7 +25,8 @@
     "uri": "mongodb://localhost:27017/rss",
     "redis": "",
     "connection": {},
-    "articlesExpire": 14
+    "articlesExpire": 14,
+    "deliveryRecordsExpire": 2
   },
   "feeds": {
     "refreshRateMinutes": 10,
@@ -45,6 +46,7 @@
     "imgLinksExistence": true,
     "checkDates": true,
     "formatTables": false,
+    "directSubscribers": false,
     "decode": {}
   },
   "advanced": {
