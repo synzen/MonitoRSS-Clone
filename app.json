@@ -33,27 +33,27 @@
 			"required": false
 		},
 		"DRSS_FEEDS_REFRESHRATEMINUTES": {
-			"description": "Refresh rate of RSS feeds",
-			"value": "0.5"
+			"description": "Refresh rate of RSS feeds. A value that is too low may lead to your IP blocked for some sites.",
+			"value": "15"
 		},
 		"DRSSWEB_ADMINIDS": {
-			"description": "Only relevant if DRSS_STARTWEB is web or bot-web. Web admin ID(s), separate multiple with commas.",
+			"description": "Only relevant if DRSS_START is web or bot-web. Web admin ID(s), separate multiple with commas.",
 			"required": false
 		},
 		"DRSSWEB_BOT_TOKEN": {
-			"description": "REQUIRED IF DRSS_STARTWEB IS web OR bot-web. Use the same token as DRSS_BOT_TOKEN.",
+			"description": "REQUIRED IF DRSS_START IS web OR bot-web. Use the same token as DRSS_BOT_TOKEN.",
 			"required": false
 		},
 		"DRSSWEB_BOT_REDIRECTURI": {
-			"description": "REQUIRED IF DRSS_STARTWEB IS web OR bot-web. Insert the domain name appending /authorize. Example on heroku: https://APPNAME.herokuapp.com/authorize. Make sure the exact url is also set set under the application OAuth2 tab under redirects.",
+			"description": "REQUIRED IF DRSS_START IS web OR bot-web. Insert the domain name appending /authorize. Example on heroku: https://APPNAME.herokuapp.com/authorize. Make sure the exact url is also set set under the application OAuth2 tab under redirects.",
 			"required": false
 		},
 		"DRSSWEB_BOT_CLIENTID": {
-			"description": "REQUIRED IF DRSS_STARTWEB IS web OR bot-web. App ID that can be found on the general information page at https://discordapp.com/developers/applications/. This should only contain numbers.",
+			"description": "REQUIRED IF DRSS_START IS web OR bot-web. App ID that can be found on the general information page at https://discordapp.com/developers/applications/. This should only contain numbers.",
 			"required": false
 		},
 		"DRSSWEB_BOT_CLIENTSECRET": {
-			"description": "REQUIRED IF DRSS_STARTWEB IS web OR bot-web. Found on your app page at Discord Developers at https://discordapp.com/developers/applications/",
+			"description": "REQUIRED IF DRSS_START IS web OR bot-web. Found on your app page at Discord Developers at https://discordapp.com/developers/applications/",
 			"required": false
 		}
 	},
