@@ -33,6 +33,7 @@
   },
   "feeds": {
     "refreshRateMinutes": 10,
+    "articleDailyChannelLimit": 0,
     "timezone": "America/New_York",
     "dateFormat": "ddd, D MMMM YYYY, h:mm A z",
     "dateLanguage": "en",
