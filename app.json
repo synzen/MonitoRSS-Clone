@@ -10,12 +10,8 @@
 		"feed"
 	],
 	"addons": [{
-			"plan": "mongolab:sandbox"
-		},
-		{
 			"plan": "heroku-redis:hobby-dev"
-		}
-	],
+	}],
 	"env": {
 		"DRSS_START": {
 			"description": "Determine what parts of Discord.RSS to start. Input bot to only start the bot, web to start only the web, or bot-web to start both. If using web, use the Heroku web dyno, NOT the worker dyno to accept requests. To keep the web dyno from sleeping, use something like uptimerobot (free app).",
@@ -23,6 +19,9 @@
 		},
 		"DRSS_BOT_TOKEN": {
 			"description": "Discord Bot token. Get it here: https://discordapp.com/developers/applications/."
+		},
+		"DRSS_DATABASE_URI": {
+			"description": "MongoDB database URI. Cannot be a folder URI (data would not persist across reboots)."
 		},
 		"DRSS_BOT_PREFIX": {
 			"description": "Prefix for Discord commands.",

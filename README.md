@@ -25,13 +25,13 @@ Discord.RSS also comes with a web interface! To run the web interface, see the d
 
 ### Deploy to Heroku
 
-You can deploy the bot in a simple way to Heroku using the button below. [Click here for detailed instructions](https://github.com/synzen/Discord.RSS/issues/45).
+You can deploy the bot in a simple way to Heroku using the button below. [Click here for detailed instructions](https://github.com/synzen/Discord.RSS/issues/45) - **you must have MongoDB hosted with its URI ready to also insert into `DRSS_DATABASE_URI` environment variable**.
 
 <!-- [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy) -->
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?button-url=https://github.com/synzen/Discord.RSS-Clone&template=https://github.com/synzen/Discord.RSS-Clone/tree/master)
 
-*If you want to deploy manually you can [follow this guide](https://github.com/synzen/Discord.RSS/issues/95).*
+*If you want to deploy manually without the button, you can [follow this guide instead](https://github.com/synzen/Discord.RSS/issues/95).*
 
 ### Hosting on Glitch
 
