@@ -1,14 +1,14 @@
 const fs = require('fs')
 const path = require('path')
-const DiscordRSS = require('discord.rss')
+const MonitoRSS = require('monitorss')
 const configPath = path.join(__dirname, '..', 'settings', 'config.bot.json')
 const configFile = fs.existsSync(configPath) ? JSON.parse(fs.readFileSync(configPath)) : {}
 
 // This will potentially throw
-DiscordRSS.config.set(configFile)
+MonitoRSS.config.set(configFile)
 
-const config = DiscordRSS.config.get()
-const v6 = DiscordRSS.migrations.v6
+const config = MonitoRSS.config.get()
+const v6 = MonitoRSS.migrations.v6
 
 v6(config)
   .then((failures) => {

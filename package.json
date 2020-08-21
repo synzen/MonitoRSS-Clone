@@ -1,8 +1,8 @@
 {
-  "name": "discord.rss-clone",
+  "name": "monitorss-clone",
   "author": "synzen",
   "version": "1.0.16",
-  "description": "Repository of Discord.RSS meant for cloning",
+  "description": "Repository of MonitoRSS meant for cloning",
   "license": "MIT",
   "main": "server.js",
   "scripts": {
@@ -11,8 +11,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "discord.rss": "^6.5.38",
-    "discord.rss-web": "0.0.69",
+    "monitorss": "^6.5.38",
+    "monitorss-web": "0.0.69",
     "request": "^2.88.2"
   },
   "devDependencies": {
@@ -20,12 +20,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/synzen/Discord.RSS-Clone.git"
+    "url": "git+https://github.com/synzen/MonitoRSS-Clone.git"
   },
   "bugs": {
-    "url": "https://github.com/synzen/Discord.RSS-Clone/issues"
+    "url": "https://github.com/synzen/MonitoRSS-Clone/issues"
   },
-  "homepage": "https://github.com/synzen/Discord.RSS-Clone#readme",
+  "homepage": "https://github.com/synzen/MonitoRSS-Clone#readme",
   "engines": {
     "node": ">=12.16"
   }

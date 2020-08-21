@@ -1,7 +1,7 @@
 {
-	"name": "Discord.RSS",
+	"name": "MonitoRSS",
 	"description": "Discord RSS bot with customizable feeds",
-	"website": "https://github.com/synzen/Discord.RSS",
+	"website": "https://github.com/synzen/MonitoRSS",
 	"logo": "https://discordapp.com/assets/d36b33903dafb0107bb067b55bdd9cbc.svg",
 	"keywords": [
 		"discord",
@@ -14,7 +14,7 @@
 	}],
 	"env": {
 		"DRSS_START": {
-			"description": "Determine what parts of Discord.RSS to start. Input bot to only start the bot, web to start only the web, or bot-web to start both. If using web, use the Heroku web dyno, NOT the worker dyno to accept requests. To keep the web dyno from sleeping, use something like uptimerobot (free app).",
+			"description": "Determine what parts of MonitoRSS to start. Input bot to only start the bot, web to start only the web, or bot-web to start both. If using web, use the Heroku web dyno, NOT the worker dyno to accept requests. To keep the web dyno from sleeping, use something like uptimerobot (free app).",
 			"value": "bot"
 		},
 		"DRSS_BOT_TOKEN": {
