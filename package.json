@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "monitorss": "^6.5.38",
-    "monitorss-web": "0.0.69",
+    "monitorss-web": "0.0.70",
     "request": "^2.88.2"
   },
   "devDependencies": {
