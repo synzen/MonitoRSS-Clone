@@ -35,8 +35,12 @@
 			"description": "Refresh rate of RSS feeds. A value that is too low may lead to your IP blocked for some sites.",
 			"value": "15"
 		},
+		"DRSSWEB_DATABASE_URI": {
+			"description": "REQUIRED IF DRSS_START IS web OR bot-web. MongoDB database URI. Must be the same as DRSS_DATABASE_URI.",
+			"required": false
+		},
 		"DRSSWEB_ADMINIDS": {
-			"description": "Only relevant if DRSS_START is web or bot-web. Web admin ID(s), separate multiple with commas.",
+			"description": "REQUIRED IF DRSS_START IS web OR bot-web. Web admin ID(s), separate multiple with commas.",
 			"required": false
 		},
 		"DRSSWEB_BOT_TOKEN": {
