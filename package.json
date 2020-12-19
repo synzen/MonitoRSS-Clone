@@ -1,7 +1,7 @@
 {
   "name": "monitorss-clone",
   "author": "synzen",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "description": "Repository of MonitoRSS meant for cloning",
   "license": "MIT",
   "main": "server.js",
