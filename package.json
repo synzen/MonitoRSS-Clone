@@ -11,7 +11,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "monitorss": "^6.10.3",
+    "monitorss": "^6.10.4",
     "monitorss-web": "0.0.86"
   },
   "devDependencies": {
