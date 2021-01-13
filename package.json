@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "monitorss": "^6.11.0",
-    "monitorss-web": "0.0.86"
+    "monitorss-web": "0.0.88"
   },
   "devDependencies": {
     "dotenv": "^8.2.0"
