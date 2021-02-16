@@ -1,7 +1,7 @@
 ---
 application:
   name: "rssdiscord"
-  project: "RSSDiscord"
+  project: "RSSDisocrd"
   organization: "QoveryCommunity"
 routers:
 - name: "main-rssdiscord"
