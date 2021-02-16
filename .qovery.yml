@@ -1,0 +1,11 @@
+---
+application:
+  name: "rssdiscord"
+  project: "RSSDiscord"
+  organization: "QoveryCommunity"
+routers:
+- name: "main-rssdiscord"
+  routes:
+  - application_name: "rssdiscord"
+    paths:
+    - "/*"
