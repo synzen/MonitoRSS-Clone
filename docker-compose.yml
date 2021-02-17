@@ -40,6 +40,8 @@ services:
       - mrss-mongo
     ports:
       - "8081:8081"
+    expose:
+      - "8081"
     environment:
       - DRSS_START=web
       - DRSSWEB_BOT_TOKEN=
