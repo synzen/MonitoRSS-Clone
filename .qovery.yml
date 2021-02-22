@@ -1,0 +1,11 @@
+---
+application:
+  name: "monitorss-clone"
+  project: "monitorss-test"
+  organization: "QoveryCommunity"
+routers:
+- name: "main-monitorss-clone"
+  routes:
+  - application_name: "monitorss-clone"
+    paths:
+    - "/*"
