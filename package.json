@@ -11,8 +11,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "monitorss": "^6.13.7",
-    "monitorss-web": "0.0.98"
+    "monitorss": "^6.13.8",
+    "monitorss-web": "0.0.99"
   },
   "devDependencies": {
     "dotenv": "^8.6.0"
