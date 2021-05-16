@@ -23,12 +23,13 @@ const {
     BadRequestError
 } = errors
 
+monitoRssConfig.set(config)
+
 const producer = new RESTProducer(serviceRedisUri)
 const deliveryPipeline = new DeliveryPipeline(null, producer)
 
 async function main() {
     await MonitoRSS.setupModels(config.database.uri)
-    monitoRssConfig.set(config)
 
 
 
