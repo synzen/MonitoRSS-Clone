@@ -2,13 +2,15 @@
 const config = require('../settings/config.bot.json')
 const MonitoRSS = require('monitorss')
 const { RESTProducer } = require('@synzen/discord-rest')
+const assert = require('assert')
 
 const {
     scripts,
     DeliveryPipeline,
     config: monitoRssConfig,
     errors,
-    Feed
+    Feed,
+    Profile
 } = MonitoRSS
 
 const {
@@ -40,7 +42,6 @@ async function main() {
                 article
             } = newArticle
             deliveryPipeline.deliver(newArticle, null, true).catch((err) => {
-                console.error(`Failed to deliver article for feed ${feedObject._id}`, err)
                 if (err instanceof BadRequestError) {
                     disableFeed(err.feedId, article.link)
                 }
@@ -56,12 +57,24 @@ async function main() {
 async function disableFeed(feedId, articleLink) {
     try {
         const feed = await Feed.get(feedId)
+        if (feed.disabled) {
+            return
+        }
+        console.log(`Disabling feed ${feedId} due to bad format`)
         if (!feed) {
             console.warn(`Unable to disable feed ${feedId} since it doesn't exist`)
             return
         }
         await feed.disable(Feed.DISABLE_REASONS.BAD_FORMAT)
-        await sendMessageToChannel(feed.channel, `Failed to deliver article <${articleLink || 'no link available'}> for feed <${feed.url}>. The feed has now been disabled due to either bad text or bad embed. Update the text and/or embed, then test for validity to re-enable.`)
+        /**
+         * @type {import('monitorss').Profile|null}
+         */
+        const errorMessage = `Failed to deliver article <${articleLink || 'no link available'}> for feed <${feed.url}>. The feed has now been disabled due to either bad text or bad embed. Update the text and/or embed, then test for validity to re-enable.`
+        const userAlerts = await getUserAlerts(feed.guild)
+        if (!userAlerts) {
+            return await sendMessageToChannel(feed.channel, errorMessage)
+        }
+        await Promise.all(userAlerts.map((id) => sendMessageToUser(id, errorMessage)))
     } catch (err) {
         console.warn(`Failed to disable feed ${feedId}`, err)
     }
@@ -78,6 +91,39 @@ async function sendMessageToChannel(channelId, content) {
     } catch (err) {
         console.error(`Failed to send alert to channel ${channelId}`, err)
     }
+}
+
+async function sendMessageToUser(userId, content) {
+    try {
+        const {status, body} = await producer.fetch(`https://discord.com/api/users/@me/channels`, {
+            method: 'POST',
+            body: JSON.stringify({
+                recipient_id: userId
+            })
+        })
+        assert.strictEqual(status, 200, `Bad status code fetching DM channel for ${userId}`)
+        const channelId = body.id
+        const {status: sendStatus} = await producer.fetch(`https://discord.com/api/channels/${channelId}/messages`, {
+            method: 'POST',
+            body: JSON.stringify({
+                content
+            })
+        })
+        assert.strictEqual(sendStatus, 200, `Bad status code when sending message for ${userId}`)
+    } catch (err) {
+        console.error(`Failed to send alert to user ${userId}`, err)
+    }
+}
+
+async function getUserAlerts(guildId) {
+    /**
+     * @type {import('monitorss').Profile|null}
+     */
+    const profile = await Profile.get(guildId)
+    if (!profile || profile.alert.length === 0) {
+        return null
+    }
+    return profile.alert
 }
 
 main().catch(err => {
