@@ -3,6 +3,10 @@ const config = require('../settings/config.bot.json')
 const MonitoRSS = require('monitorss')
 const { RESTProducer } = require('@synzen/discord-rest')
 const assert = require('assert')
+const fs = require('fs')
+const path = require('path')
+const schedulesPath = path.join(__dirname, '..', 'settings', 'schedules.json')
+const customSchedules = fs.existsSync(schedulesPath) ? JSON.parse(fs.readFileSync(schedulesPath)) : []
 
 const {
     scripts,
@@ -33,9 +37,9 @@ const deliveryPipeline = new DeliveryPipeline(null, producer)
 async function main() {
     await MonitoRSS.setupModels(config.database.uri)
 
-
-
-    scripts.runSchedule(config).then((scheduleManager) => {
+    scripts.runSchedule(config, {
+        schedules: customSchedules
+    }).then((scheduleManager) => {
         scheduleManager.on('newArticle', newArticle => {
             const {
                 feedObject,
