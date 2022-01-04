@@ -1,6 +1,7 @@
 // @ts-check
 const config = require('../settings/config.bot.json')
 const MonitoRSS = require('monitorss')
+const setupLogger = require('@monitorss/logger').default
 const { RESTProducer } = require('@synzen/discord-rest')
 const assert = require('assert')
 const fs = require('fs')
@@ -22,7 +23,8 @@ const {
         discordHttpGateway: {
         redisUri: serviceRedisUri
         }
-    }
+    },
+    datadogApiKey,
 } = config
 
 const {
@@ -35,6 +37,13 @@ const producer = new RESTProducer(serviceRedisUri)
 const deliveryPipeline = new DeliveryPipeline(null, producer)
 
 async function main() {
+    const logger = setupLogger({
+        env: process.env.NODE_ENV,
+        datadog: {
+            apiKey: datadogApiKey,
+            service: 'monitorss-feed-fetcher'
+        }
+    })
     await MonitoRSS.setupModels(config.database.uri)
 
     scripts.runSchedule(config, {
@@ -45,6 +54,9 @@ async function main() {
                 feedObject,
                 article
             } = newArticle
+            logger.info(`Enqueuing article`, {
+                feedObject
+            })
             deliveryPipeline.deliver(newArticle, null, true).catch((err) => {
                 if (err instanceof BadRequestError) {
                     disableFeed(err.feedId, article.link)
