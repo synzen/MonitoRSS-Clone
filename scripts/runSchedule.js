@@ -72,6 +72,13 @@ async function main() {
                 console.error(`Failed to send alert for channel ${channelId}`, err)
             }
         })
+
+        scheduleManager.on('connectionFailure', (url, reason) => {
+            logger.datadog(`Connection failure`, {
+                url,
+                reason,
+            })
+        })
     })
 }
 
