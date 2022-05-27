@@ -21,8 +21,11 @@ const {
 const {
     apis: {
         discordHttpGateway: {
-        redisUri: serviceRedisUri
+            rabbitmqUri
         }
+    },
+    bot: {
+        clientId
     },
     datadogApiKey,
 } = config
@@ -33,10 +36,14 @@ const {
 
 monitoRssConfig.set(config)
 
-const producer = new RESTProducer(serviceRedisUri)
-const deliveryPipeline = new DeliveryPipeline(null, producer)
+const producer = new RESTProducer(rabbitmqUri, {
+    clientId
+})
 
 async function main() {
+    await producer.initialize()
+    const deliveryPipeline = new DeliveryPipeline(null, producer)
+
     const logger = setupLogger({
         env: process.env.NODE_ENV,
         datadog: {
