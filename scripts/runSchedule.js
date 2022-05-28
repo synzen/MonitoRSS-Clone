@@ -56,7 +56,7 @@ async function main() {
     scripts.runSchedule(config, {
         schedules: customSchedules
     }).then((scheduleManager) => {
-        scheduleManager.on('newArticle', newArticle => {
+        scheduleManager.on('newArticle', async newArticle => {
             const {
                 feedObject,
                 article
@@ -69,6 +69,10 @@ async function main() {
                     disableFeed(err.feedId, article.link)
                 }
             })
+
+            console.log('ot new ', 'sending')
+            const channel = await fetchChannel(feedObject.channel)
+            await sendAlert(feedObject.guild, feedObject.channel, 'Hello world')
         })
         
         scheduleManager.on('alert', async (channelId, message) => {
