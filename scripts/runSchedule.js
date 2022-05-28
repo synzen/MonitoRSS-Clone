@@ -65,14 +65,8 @@ async function main() {
                 feedObject
             })
             deliveryPipeline.deliver(newArticle, null, true).catch((err) => {
-                if (err instanceof BadRequestError) {
-                    disableFeed(err.feedId, article.link)
-                }
+                logger.datadog(`Failed to deliver article (${err.message})`, feedObject)
             })
-
-            console.log('ot new ', 'sending')
-            const channel = await fetchChannel(feedObject.channel)
-            await sendAlert(feedObject.guild, feedObject.channel, 'Hello world')
         })
         
         scheduleManager.on('alert', async (channelId, message) => {
