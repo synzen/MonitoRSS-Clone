@@ -36,21 +36,30 @@ const {
 
 monitoRssConfig.set(config)
 
+
+const logger = setupLogger({
+    env: process.env.NODE_ENV,
+    datadog: {
+        apiKey: datadogApiKey,
+        service: 'monitorss-feed-fetcher'
+    }
+})
+
 const producer = new RESTProducer(rabbitmqUri, {
     clientId
+})
+
+producer.on('error', (err) => {
+    logger.error(`RESTProducer error (${err.message})`)
+    logger.datadog(`RESTProducer error (${err.message})`, {
+        stack: err.stack
+    })
 })
 
 async function main() {
     await producer.initialize()
     const deliveryPipeline = new DeliveryPipeline(null, producer)
 
-    const logger = setupLogger({
-        env: process.env.NODE_ENV,
-        datadog: {
-            apiKey: datadogApiKey,
-            service: 'monitorss-feed-fetcher'
-        }
-    })
     await MonitoRSS.setupModels(config.database.uri)
 
     scripts.runSchedule(config, {
@@ -85,28 +94,6 @@ async function main() {
             })
         })
     })
-}
-
-async function disableFeed(feedId, articleLink) {
-    try {
-        const feed = await Feed.get(feedId)
-        if (feed.disabled) {
-            return
-        }
-        console.log(`Disabling feed ${feedId} due to bad format`)
-        if (!feed) {
-            console.warn(`Unable to disable feed ${feedId} since it doesn't exist`)
-            return
-        }
-        await feed.disable(Feed.DISABLE_REASONS.BAD_FORMAT)
-        /**
-         * @type {import('monitorss').Profile|null}
-         */
-        const errorMessage = `Failed to deliver article <${articleLink || 'no link available'}> for feed <${feed.url}>. The feed has now been disabled due to either bad text or bad embed. Update the text and/or embed, then test for validity to re-enable.`
-        await sendAlert(feed.guild, feed.channel, errorMessage)
-    } catch (err) {
-        console.warn(`Failed to disable feed ${feedId}`, err)
-    }
 }
 
 async function fetchChannel(channelId) {
