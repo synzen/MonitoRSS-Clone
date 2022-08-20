@@ -28,6 +28,7 @@ const {
         clientId
     },
     datadogApiKey,
+    datadogServiceName
 } = config
 
 const {
@@ -41,7 +42,7 @@ const logger = setupLogger({
     env: process.env.NODE_ENV,
     datadog: {
         apiKey: datadogApiKey,
-        service: 'monitorss-feed-fetcher'
+        service: datadogServiceName || 'monitorss-feed-fetcher'
     }
 })
 
