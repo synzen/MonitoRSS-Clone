@@ -12,8 +12,8 @@
   },
   "dependencies": {
     "@monitorss/logger": "^1.1.0",
-    "@synzen/discord-rest": "^0.6.26-beta.48",
-    "monitorss": "^6.14.9-beta.14",
+    "@synzen/discord-rest": "^0.7.0-beta.3",
+    "monitorss": "^6.14.9-beta.15",
     "monitorss-web": "0.0.106"
   },
   "devDependencies": {
