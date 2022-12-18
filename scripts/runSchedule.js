@@ -81,8 +81,8 @@ async function main() {
         
         scheduleManager.on('alert', async (channelId, message) => {
             try {
-                const channel = await fetchChannel(channelId)
-                await sendAlert(channel.guild_id, channelId, message)
+                // const channel = await fetchChannel(channelId)
+                // await sendAlert(channel.guild_id, channelId, message)
             } catch (err) {
                 console.error(`Failed to send alert for channel ${channelId}`, err)
             }
@@ -125,11 +125,11 @@ async function sendMessageToChannel(channelId, content) {
  * @returns 
  */
 async function sendAlert(guildId, channelId, errorMessage) {
-    const userAlerts = await getUserAlerts(guildId)
-    if (!userAlerts) {
-        return await sendMessageToChannel(channelId, errorMessage)
-    }
-    await Promise.all(userAlerts.map((id) => sendMessageToUser(id, errorMessage)))
+    // const userAlerts = await getUserAlerts(guildId)
+    // if (!userAlerts) {
+    // return await sendMessageToChannel(channelId, errorMessage)
+    // }
+    // await Promise.all(userAlerts.map((id) => sendMessageToUser(id, errorMessage)))
 }
 
 async function sendMessageToUser(userId, content) {
