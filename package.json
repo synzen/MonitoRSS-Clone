@@ -13,7 +13,7 @@
   "dependencies": {
     "@monitorss/logger": "^1.1.0",
     "monitorss": "^6.14.12",
-    "monitorss-web": "0.0.106"
+    "monitorss-web": "0.0.108"
   },
   "devDependencies": {
     "dotenv": "^8.6.0"
