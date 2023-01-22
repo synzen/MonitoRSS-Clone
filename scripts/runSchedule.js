@@ -73,7 +73,9 @@ async function main() {
             } = newArticle
             logger.datadog(`Enqueuing article`, {
                 feedObject,
-                article
+                article: {
+                    _id: article._id,
+                }
             })
             deliveryPipeline.deliver(newArticle, null, true).catch((err) => {
                 logger.datadog(`Failed to deliver article (${err.message})`, feedObject)
