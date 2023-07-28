@@ -14,7 +14,7 @@
     "@monitorss/logger": "^1.1.0",
     "@synzen/discord-rest": "^0.7.0-beta.6",
     "monitorss": "^6.14.9-beta.23",
-    "monitorss-web": "^0.1.0-beta.4"
+    "monitorss-web": "^0.1.0-beta.5"
   },
   "devDependencies": {
     "dotenv": "^8.6.0"
