@@ -8,6 +8,7 @@
     "failedFeeds": true
   },
   "bot": {
+    "clientId": "",
     "token": "",
     "locale": "en-US",
     "enableCommands": true,
