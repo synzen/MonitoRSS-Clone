@@ -1,3 +1,8 @@
+
+> [!IMPORTANT]  
+> This repo is no longer used for hosting MonitoRSS. Please visit https://github.com/synzen/MonitoRSS instead to either set up MonitoRSS, or to migrate off of this repo.
+
+
 # MonitoRSS Clone (Formerly Discord.RSS)
 
 **This repository is only for users who will clone MonitoRSS (formerly known as Discord.RSS) files directly.**
